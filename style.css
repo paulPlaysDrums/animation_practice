@@ -1,0 +1,147 @@
+.heart {
+    width: 150px;
+    height: 150px;
+    background-color: pink;
+
+    margin: 150px 100px;
+    transform: rotate(-135deg);
+
+    animation-name: change;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+
+    position: relative;
+}
+
+.heart::before {
+    content: "";
+    width: 150px;
+    height: 150px;
+    background-color: pink;
+    
+    position: absolute;
+    top: 75px;
+    border-radius: 50%;
+}
+
+.heart::after {
+    content: "";
+    width: 150px;
+    height: 150px;
+    background-color: pink;
+    
+    position: absolute;
+    left: 75px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 50%;
+}
+
+@keyframes change {
+    0% {
+        transform: scale(1) rotate(-135);;
+    }
+    50% {
+        transform: scale(0.43) rotate(-135deg);
+    }
+    100% {
+        transform: scale(1) rotate(-135);;
+    }
+}
+
+.hello-world {
+    background-color: lightgreen;
+    border-radius: 10px;
+    color: white;
+    font-size: 2em;
+    padding: 10px;
+    text-align: center;
+    width: 240px;
+
+    position: relative;
+    animation-name: moving;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes moving {
+    0% {
+        left: 0;
+    }
+    50% {
+        left: 400px;
+    }
+    100% {
+        left: 0px;
+    }
+}
+
+.pretty {
+    background: linear-gradient(#f562d5, #f780dd, #f5ccee, white);
+    width: 100%;
+    height: 500px;
+}
+/*
+    Make it turn white sooner
+*/
+
+.smiles {
+    margin: 10px;
+    width: 80px;
+    z-index: 2; /* This is so the smiles go over the hello world */
+
+    position: relative;   
+    animation-name: falling;
+    animation-iteration-count: infinite;
+}
+
+.smile-1 {
+    /* animation-duration: 5.4s; */
+    animation-duration: 5s;
+    animation-timing-function: ease;
+}
+
+.smile-2 {
+    /* animation-duration: 3.9s; */
+    animation-duration: 5s;
+    animation-timing-function: ease-in;
+}
+
+.smile-3 {
+    /* animation-duration: 4.1s; */
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+}
+
+.smile-4 {
+    /* animation-duration: 4.9s; */
+    animation-duration: 5s;
+    animation-timing-function: ease-out;
+}
+
+.smile-5 {
+    /* animation-duration: 5.2s; */
+    animation-duration: 5s;
+    animation-timing-function: linear;
+}
+
+.smile-6 {
+    /* animation-duration: 4.2s; */
+    animation-duration: 5s;
+    animation-timing-function: cubic-bezier( 0.311, 0.441, 0.444, 1.649);
+}
+
+@keyframes falling {
+    0% {
+        top: 0px;
+    }
+
+    50% {
+        top: 500px;
+    }
+
+    100% {
+        top: 0px;
+    }
+}
